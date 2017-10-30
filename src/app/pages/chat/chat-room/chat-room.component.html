@@ -1,0 +1,22 @@
+<div class="chat-list">
+  <div class="col col-flex">
+    <div class="messages-list"
+         appInfinityScroll
+         [scrollPercent]="90"
+         [scrollUpCallback]="onScrollUp">
+      <app-message-list [messages]="messages"></app-message-list>
+    </div>
+    <div class="message-input">
+      <form (submit)="sendMessage()" [formGroup]="messageForm" novalidate>
+        <input type="text" formControlName="message">
+        <div class="send-btn">
+          <button type="submit" mat-icon-button>
+            <mat-icon >send</mat-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <app-users-list class="col"></app-users-list>
+</div>
+

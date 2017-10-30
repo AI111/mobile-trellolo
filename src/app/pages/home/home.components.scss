@@ -1,0 +1,26 @@
+.progress-circle{
+  svg{
+
+  }
+.pie-diagramm{
+  //width: 100%;
+}
+  .background-circle{
+    fill: conic-gradient(#fff, #000);
+    fill: transparent;
+    stroke-width: 4px;
+    stroke-linecap: round;
+  }
+  .outline-circle{
+    stroke: #DEDEDE;
+    fill: transparent;
+    stroke-width: 4px;
+    stroke-linecap: round;
+  }
+  .progress-circle-path{
+    stroke-width: 4px;
+    stroke-linecap: round;
+    stroke: red;
+  }
+}
+

@@ -1,0 +1,17 @@
+
+<mat-toolbar  color="primary">
+  <button mat-icon-button type="button" (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>First Row</span>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav class="example-sidenav" mode="side">
+    <app-navigation-panel></app-navigation-panel>
+  </mat-sidenav>
+
+  <div class="sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-sidenav-container>

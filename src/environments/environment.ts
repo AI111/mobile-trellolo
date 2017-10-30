@@ -3,6 +3,19 @@
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
+import {IAppConfig} from '../app/common/IAppConfig';
+
 export const environment = {
-  production: false
+  production: false,
+  end: 'dev'
+};
+
+export const config: IAppConfig = {
+  tokenName: 'token',
+  userKey: 'user',
+  serverUrl: 'http://localhost:3000',
+  url: 'http://localhost',
+  port: '4200',
+  chatNamespace: 'rooms',
+  boardNamespace: 'boards',
 };

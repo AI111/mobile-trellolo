@@ -1,0 +1,7 @@
+<ul class="chat-list">
+  <li *ngFor="let message of messages | async">
+    <h2>{{message.message}}</h2>
+    <span>{{message.roomId}}</span>
+    <span>{{message.createdAt}}</span>
+  </li>
+</ul>

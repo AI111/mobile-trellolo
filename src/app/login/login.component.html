@@ -1,0 +1,23 @@
+<div class="login-block">
+  <form class="login-form" (submit)="login()" [formGroup]="loginForm" novalidate>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Email" formControlName="email">
+      <mat-error *ngIf="loginForm.get('email').hasError('pattern')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="loginForm.get('password').hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="password" type="password" formControlName="password">
+    </mat-form-field>
+    <button mat-raised-button type="submit" [disabled]="loginForm.pristine || !loginForm.valid">Login</button>
+    <button mat-raised-button color="primary" type="button">Sighup</button>
+
+  </form>
+  <div class="button-row">
+    <a href="/auth/google" mat-raised-button color="accent">Google</a>
+    <a href="/auth/github" mat-raised-button color="warn">Github</a>
+  </div>
+</div>
