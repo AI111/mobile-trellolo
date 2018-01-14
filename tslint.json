@@ -124,8 +124,7 @@
     "component-selector": [
       true,
       "element",
-      ["app",
-      "board"],
+      "app",
       "kebab-case"
     ],
     "use-input-property-decorator": true,

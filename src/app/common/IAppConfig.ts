@@ -7,10 +7,6 @@ export enum UsersRoleEnum {
 }
 export interface IAppConfig {
   tokenName: string;
-  userKey: string;
   port: string;
   url: string;
-  serverUrl: string;
-  chatNamespace: string;
-  boardNamespace: string;
 }

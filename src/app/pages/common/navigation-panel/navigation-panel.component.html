@@ -9,22 +9,21 @@
       <!--Chat</a>-->
 <!--</mat-list>-->
 <mat-form-field>
-  <mat-select placeholder="Selected project" [(ngModel)]="projectId" (change)="onProjectChange($event)">
-    <mat-option *ngFor="let project of projects | async" [value]="project._id">
-      <img matListAvatar class="project-icon" [src]="project.icon" alt="">
-     {{project.title}}
+  <mat-select placeholder="Favorite food">
+    <mat-option *ngFor="let project of projects | async" >
+      {{ project.title }}
     </mat-option>
   </mat-select>
 </mat-form-field>
 <mat-list>
   <h3 mat-subheader>Folders</h3>
-  <a mat-list-item [routerLink]="['boards','activity']">
+  <a mat-list-item routerLink="/boards">
     <mat-icon mat-list-icon>dashboard</mat-icon>
     <h4 mat-line>Boards</h4>
   </a>
   <a mat-list-item routerLink="/chat">
     <mat-icon mat-list-icon>chat</mat-icon>
-    <h4 mat-line>Chat</h4>
+    <h4 mat-line>Settings</h4>
   </a>
   <mat-divider></mat-divider>
   <h3 mat-subheader>Settings</h3>
