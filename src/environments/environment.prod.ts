@@ -7,6 +7,10 @@ export const environment = {
 
 export const config: IAppConfig = {
   tokenName: 'token',
+  userKey: 'user',
+  serverUrl: '/',
   url: '/',
-  port: '4200'
+  port: '4200',
+  chatNamespace: 'rooms',
+  boardNamespace: 'boards',
 };

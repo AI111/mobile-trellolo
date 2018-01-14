@@ -1,0 +1,13 @@
+<div class="users-list">
+<div class="list">
+  <div class="item" *ngFor="let user of users | async">
+    <div class="avatar" [ngClass]="{'online': user.online}">
+      <img [src]="user.avatar">
+    </div>
+    <div class="content">
+      <h4>{{user.name}}</h4>
+      <span>{{user.accessRights}}</span>
+    </div>
+  </div>
+</div>
+</div>

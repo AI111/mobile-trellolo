@@ -19,13 +19,13 @@ export class JwtHelperService {
 
   // credits for decoder goes to https://github.com/atk
   private b64decode(str: string): string {
-    let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
     let output = '';
 
     str = String(str).replace(/=+$/, '');
 
     if (str.length % 4 == 1) {
-      throw new Error("'atob' failed: The string to be decoded is not correctly encoded.");
+      throw new Error('\'atob\' failed: The string to be decoded is not correctly encoded.');
     }
 
     for (
@@ -82,7 +82,7 @@ export class JwtHelperService {
   }
 
   public isTokenExpired(token: string, offsetSeconds?: number): boolean {
-    let date = this.getTokenExpirationDate(token);
+    const date = this.getTokenExpirationDate(token);
     offsetSeconds = offsetSeconds || 0;
 
     if (date == null) {

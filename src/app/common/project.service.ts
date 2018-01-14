@@ -16,5 +16,10 @@ export class ProjectService extends IBaseCRUDServicr<IProjectModel> {
               @Inject(APP_CONFIG) protected config) {
     super(http, config);
   }
-
+ public get projectId(): number {
+    return parseInt((localStorage.getItem('project') || '-1'), 10);
+ }
+ public set projectId(id: number){
+   localStorage.setItem('project', id + '');
+ }
 }

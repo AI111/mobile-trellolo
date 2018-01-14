@@ -5,6 +5,7 @@ import {JwtHelperService} from './jwt-helper.service';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ProjectService} from './project.service';
 import {AuthInterceptor} from './auth.service/auth.interceptor';
+import {SocketService} from './socket.service';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import {AuthInterceptor} from './auth.service/auth.interceptor';
     AuthService,
     ProjectService,
     JwtHelperService,
+    SocketService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

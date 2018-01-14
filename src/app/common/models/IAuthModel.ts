@@ -1,7 +1,7 @@
-export interface IAuthModel{
+import {IUser} from './IUser';
+
+export interface IAuthModel extends IUser{
   token: string;
-  email: string;
-  name: string;
 }
 export interface ILocalAuthRequest{
   email: string;

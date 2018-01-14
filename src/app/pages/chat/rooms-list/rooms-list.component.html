@@ -1,0 +1,8 @@
+<mat-list>
+<a mat-list-item *ngFor="let room of rooms | async" [routerLink]="['rooms', room._id]">
+  <!--<img matListAvatar [src]="room.users[0].avatar">-->
+
+  <h3 matLine> {{room.name}} </h3>
+
+</a>
+</mat-list>

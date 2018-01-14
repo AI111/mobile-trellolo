@@ -12,6 +12,10 @@ export const environment = {
 
 export const config: IAppConfig = {
   tokenName: 'token',
+  userKey: 'user',
+  serverUrl: 'http://localhost:3000',
   url: 'http://localhost',
-  port: '4200'
+  port: '4200',
+  chatNamespace: 'rooms',
+  boardNamespace: 'boards',
 };

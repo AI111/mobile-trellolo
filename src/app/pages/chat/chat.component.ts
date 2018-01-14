@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {IRoomModel} from '../../common/models/IRoomModel';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-chat',
@@ -7,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
   }
