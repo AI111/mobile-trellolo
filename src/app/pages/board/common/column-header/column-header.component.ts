@@ -9,9 +9,13 @@ import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 export class ColumnHeaderComponent implements OnInit {
   @Input()
   title: string;
+  private open: boolean;
   constructor() { }
 
   ngOnInit() {
   }
-
+public toggle() {
+  console.log(this.open);
+  this.open = !this.open;
+}
 }

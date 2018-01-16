@@ -5,7 +5,7 @@ import {BoardCardComponent} from './board-card/board.card.component';
 import {BoardColsComponent} from './board-cols/board.cols.component';
 import {DragulaModule} from 'ng2-dragula';
 import { ColumnHeaderComponent } from './column-header/column-header.component';
-import {MatExpansionModule, MatFormFieldModule, MatInputModule,} from '@angular/material';
+import {MatButtonModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule,} from '@angular/material';
 import {DndBoardService} from './dnd-board.service';
 
 @NgModule({
@@ -14,7 +14,9 @@ import {DndBoardService} from './dnd-board.service';
     DragulaModule,
     MatExpansionModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule
   ],
   declarations: [
     ComboundBoardComponent,
