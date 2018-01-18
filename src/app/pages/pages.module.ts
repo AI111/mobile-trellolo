@@ -11,6 +11,7 @@ import {IBaseCRUDServicr} from '../common/IBaseCRUDServicr';
 import {AbstractDataResolver, dataResolveFactory} from '../common/AbstractDataResolver';
 import {ActivityService} from './board/services/activity.service';
 import {IActivityModel} from '../common/models/IActivityModel';
+import {HomeModule} from './home/home.module';
 
 @NgModule({
   imports: [
@@ -23,8 +24,9 @@ import {IActivityModel} from '../common/models/IActivityModel';
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
+    HomeModule
   ],
 
-  declarations: [PagesComponent, HomeComponent, NavigationPanelComponent]
+  declarations: [PagesComponent, NavigationPanelComponent]
 })
 export class PagesModule { }

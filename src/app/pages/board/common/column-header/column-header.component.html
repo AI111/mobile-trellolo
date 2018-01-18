@@ -1,14 +1,13 @@
 <div [ngClass]="{'hidden-block': !open}">
   <div class="header handle">
     <h3>{{title}}</h3>
-    <a href="javascript:void(0)" (click)="toggle()">
-      <span class="expansion-indicator" ></span>
-    </a>
+    <button class="expansion-indicator" (click)="toggle()"></button>
+
   </div>
   <div class="input-name">
     <form class="form-fields">
       <input  type="text" placeholder="Clearable input"/>
-      <button   mat-icon-button  class="clear-text" type="button" aria-label="Clear">
+      <button  mat-icon-button  class="clear-text" type="button" aria-label="Clear">
         <mat-icon>close</mat-icon>
       </button>
     </form>

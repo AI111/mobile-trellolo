@@ -7,6 +7,7 @@ import {DragulaModule} from 'ng2-dragula';
 import { ColumnHeaderComponent } from './column-header/column-header.component';
 import {MatButtonModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule,} from '@angular/material';
 import {DndBoardService} from './dnd-board.service';
+import { CardUserListComponent } from './card-user-list/card-user-list.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import {DndBoardService} from './dnd-board.service';
     ComboundBoardComponent,
     BoardColsComponent,
     BoardCardComponent,
-    ColumnHeaderComponent
+    ColumnHeaderComponent,
+    CardUserListComponent
   ],
   providers: [
     DndBoardService

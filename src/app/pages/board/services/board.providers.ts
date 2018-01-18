@@ -19,4 +19,4 @@ export const DATA_RESOLE_PROVIDERS: FactoryProvider[] = [
     useFactory: dataResolveFactory,
     deps: [BoardService, Router],
   }
-]
+];

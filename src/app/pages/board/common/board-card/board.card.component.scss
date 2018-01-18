@@ -1,15 +1,28 @@
 .board-card{
-  padding: 8px;
+  box-sizing: border-box;
+  //padding: px;
   border-left: 2px solid red ;
   h3{
     margin: 0;
   }
   width: 100%;
   min-height: 100px;
-  //margin: 4px;
   background-color: #FEFEFE;
   margin: 4px 0;
   border-radius: 2px;
   box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
   transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  .top-block{
+    padding: 8px;
+  }
+  .bottom-block{
+    height: 48px;
+    border-top: 1px solid #AAAAAA;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 0 16px;
+  }
 }
+

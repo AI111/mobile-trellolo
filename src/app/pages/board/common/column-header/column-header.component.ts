@@ -9,7 +9,7 @@ import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 export class ColumnHeaderComponent implements OnInit {
   @Input()
   title: string;
-  private open: boolean;
+  public open: boolean;
   constructor() { }
 
   ngOnInit() {
