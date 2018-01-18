@@ -9,6 +9,8 @@ import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 export class ColumnHeaderComponent implements OnInit {
   @Input()
   title: string;
+
+  card
   public open: boolean;
   constructor() { }
 
