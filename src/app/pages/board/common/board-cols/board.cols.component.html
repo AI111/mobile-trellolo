@@ -1,5 +1,5 @@
 <div class="column">
-  <board-column-header [title]="column.title" (cardCreate)="createCard($event)"></board-column-header>
+  <board-column-header [title]="column.title"></board-column-header>
   <div class="container"  [dragula]="'column'" [dragulaModel]="column.cards" [attr.column-id]="column._id">
     <app-board-card *ngFor="let card of column.cards" [card]="card" [attr.card-id]="card._id"></app-board-card>
   </div>
