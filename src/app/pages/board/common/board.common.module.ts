@@ -8,6 +8,7 @@ import { ColumnHeaderComponent } from './column-header/column-header.component';
 import {MatButtonModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule,} from '@angular/material';
 import {DndBoardService} from './dnd-board.service';
 import { CardUserListComponent } from './card-user-list/card-user-list.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { CardUserListComponent } from './card-user-list/card-user-list.component
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   declarations: [
     ComboundBoardComponent,
