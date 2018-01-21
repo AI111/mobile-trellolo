@@ -10,6 +10,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class ColumnHeaderComponent implements OnInit {
   @Input()
   public title: string;
+
   @Output()
   public cardCreate: EventEmitter<string> = new EventEmitter<string>();
   public open: boolean;
@@ -22,8 +23,10 @@ export class ColumnHeaderComponent implements OnInit {
   ngOnInit() {
   }
   public onSubmit() {
-    console.log(this.cardForm);
-   if (this.cardForm.valid) this.cardCreate.next(this.cardForm.value.name);
+   if (this.cardForm.valid){
+     this.cardCreate.next(this.cardForm.value.name);
+    this.clearData();
+   }
   }
   public toggle(): void{
     console.log(this.open);

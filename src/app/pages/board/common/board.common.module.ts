@@ -5,20 +5,24 @@ import {BoardCardComponent} from './board-card/board.card.component';
 import {BoardColsComponent} from './board-cols/board.cols.component';
 import {DragulaModule} from 'ng2-dragula';
 import { ColumnHeaderComponent } from './column-header/column-header.component';
-import {MatButtonModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule,} from '@angular/material';
+import {MatButtonModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule,} from '@angular/material';
 import {DndBoardService} from './dnd-board.service';
 import { CardUserListComponent } from './card-user-list/card-user-list.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { CardPopupComponent } from './card-popup/card-popup.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     DragulaModule,
+    RouterModule,
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
     MatButtonModule,
+    MatMenuModule,
     ReactiveFormsModule
   ],
   declarations: [
@@ -26,7 +30,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     BoardColsComponent,
     BoardCardComponent,
     ColumnHeaderComponent,
-    CardUserListComponent
+    CardUserListComponent,
+    CardPopupComponent
   ],
   providers: [
     DndBoardService

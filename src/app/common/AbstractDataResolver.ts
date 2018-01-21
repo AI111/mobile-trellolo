@@ -4,12 +4,15 @@ import {IBaseCRUDServicr} from './IBaseCRUDServicr';
 import {IDBEntity} from './models/IDBEntity';
 
 export class AbstractDataResolver<T extends IDBEntity>  implements Resolve<T> {
-  constructor(private rs: IBaseCRUDServicr<T>, private router: Router) {}
+  constructor(private rs: IBaseCRUDServicr<T>, private router: Router, private func: string = 'getById', private parameter?: string) {
+  }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<T> {
-    return this.rs.getById(+route.paramMap.get('id'));
+    return this.rs[this.func](this.parameter && (+route.paramMap.get(this.parameter)));
   }
 }
-export function dataResolveFactory<T extends IDBEntity>(service: IBaseCRUDServicr<T>, router: Router): AbstractDataResolver<T> {
-  return new AbstractDataResolver<T>(service, router);
+export function dataResolveFactory(func: string, parameter?: string) {
+  return function <T extends IDBEntity>(service: IBaseCRUDServicr<T>, router: Router): AbstractDataResolver<T> {
+    return new AbstractDataResolver<T>(service, router, func, parameter);
+  };
 };

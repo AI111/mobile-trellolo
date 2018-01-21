@@ -10,7 +10,7 @@
 <!--</mat-list>-->
 <mat-form-field>
   <mat-select placeholder="Selected project" [(ngModel)]="projectId" (change)="onProjectChange($event)">
-    <mat-option *ngFor="let project of projects | async" [value]="project._id">
+    <mat-option *ngFor="let project of projects | async" [value]="project">
       <img matListAvatar class="project-icon" [src]="project.icon" alt="">
      {{project.title}}
     </mat-option>
@@ -18,7 +18,7 @@
 </mat-form-field>
 <mat-list>
   <h3 mat-subheader>Folders</h3>
-  <a mat-list-item [routerLink]="['boards','activity']">
+  <a mat-list-item [routerLink]="['boards']">
     <mat-icon mat-list-icon>dashboard</mat-icon>
     <h4 mat-line>Boards</h4>
   </a>

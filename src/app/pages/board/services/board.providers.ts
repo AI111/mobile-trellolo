@@ -4,9 +4,12 @@ import {AbstractDataResolver, dataResolveFactory} from '../../../common/Abstract
 import {Router} from '@angular/router';
 import {ActivityService} from './activity.service';
 import {BoardService} from './board.service';
+import {CardService} from './card.service';
 
 export const ACTIVITY_RESOLVE = new InjectionToken<AbstractDataResolver<IActivityModel>>('ACTIVITY_RESOLVE');
 export const BOARD_RESOLVE = new InjectionToken<AbstractDataResolver<IActivityModel>>('BOARD_RESOLVE');
+export const BOARDS_RESOLVE = new InjectionToken<AbstractDataResolver<IActivityModel>>('BOARD_RESOLVE');
+export const CARD_RESOLVE = new InjectionToken<AbstractDataResolver<IActivityModel>>('BOARD_RESOLVE');
 
 export const DATA_RESOLE_PROVIDERS: FactoryProvider[] = [
   {
@@ -16,7 +19,17 @@ export const DATA_RESOLE_PROVIDERS: FactoryProvider[] = [
   },
   {
     provide: BOARD_RESOLVE,
-    useFactory: dataResolveFactory,
+    useFactory: dataResolveFactory('getById', 'id'),
     deps: [BoardService, Router],
+  },
+  {
+    provide: BOARDS_RESOLVE,
+    useFactory: dataResolveFactory('getAll'),
+    deps: [BoardService, Router],
+  },
+  {
+    provide: CARD_RESOLVE,
+    useFactory: dataResolveFactory('getById', 'cardId'),
+    deps: [CardService, Router],
   }
 ];

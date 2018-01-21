@@ -1,10 +1,12 @@
-<div class="board-card">
-  <div class="top-block">
-    <h3>{{card?.description}}</h3>
-    <p>{{card.position}}</p>
+<a class="card-link" [routerLink]="[{ outlets: { popup: ['card',card._id] } }]">
+  <div  class="board-card" >
+    <div class="top-block">
+      <h3>{{card?.description}}</h3>
+      <p>{{card.position}}</p>
+    </div>
+    <div class="bottom-block">
+      <mat-icon color="primary">comment</mat-icon>
+      {{12}}
+    </div>
   </div>
-  <div class="bottom-block">
-    <mat-icon color="primary">comment</mat-icon>
-    {{12}}
-  </div>
-</div>
+</a>

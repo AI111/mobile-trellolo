@@ -13,9 +13,11 @@ import {DATA_RESOLE_PROVIDERS} from './services/board.providers';
 import {BoardCommonModule} from './common/board.common.module';
 import {ColumnService} from './services/column.service';
 import {CardService} from './services/card.service';
+import {MatListModule} from '@angular/material';
 
 @NgModule({
   imports: [
+    MatListModule,
     CommonModule,
     NgxDatatableModule,
     BoardCommonModule,
