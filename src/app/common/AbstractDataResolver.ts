@@ -2,17 +2,30 @@ import {Observable} from 'rxjs/Observable';
 import {ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot} from '@angular/router';
 import {IBaseCRUDServicr} from './IBaseCRUDServicr';
 import {IDBEntity} from './models/IDBEntity';
+import {Inject, InjectionToken} from '@angular/core';
 
-export class AbstractDataResolver<T extends IDBEntity>  implements Resolve<T> {
-  constructor(private rs: IBaseCRUDServicr<T>, private router: Router, private func: string = 'getById', private parameter?: string) {
+export const RESOLVE_KEY = new InjectionToken<string>('RESOLVE_KEY');
+export const RESOLVE_METHOD = new InjectionToken<string>('RESOLVE_METHOD');
+
+export class AbstractDataResolverById<T extends IDBEntity>  implements Resolve<T> {
+  constructor(private rs: IBaseCRUDServicr<T>, private parameter: string = 'id') {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<T> {
-    return this.rs[this.func](this.parameter && (+route.paramMap.get(this.parameter)));
+    return this.rs.getById(+route.paramMap.get(this.parameter));
   }
 }
-export function dataResolveFactory(func: string, parameter?: string) {
-  return function <T extends IDBEntity>(service: IBaseCRUDServicr<T>, router: Router): AbstractDataResolver<T> {
-    return new AbstractDataResolver<T>(service, router, func, parameter);
-  };
-};
+export class AbstractDataResolverAll<T extends IDBEntity>  implements Resolve<T[]> {
+  constructor(private rs: IBaseCRUDServicr<T>, private query?: object) {
+  }
+
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<T[]> {
+    return this.rs.getAll(this.query);
+  }
+}
+export function dataResolveByIdyFactory<T extends IDBEntity>(service: IBaseCRUDServicr<T>) {
+  return new AbstractDataResolverById<T>(service, 'id');
+}
+export function dataResolveAllFactory<T extends IDBEntity>(service: IBaseCRUDServicr<T>) {
+  return new AbstractDataResolverAll<T>(service);
+}

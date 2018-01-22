@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import {RouterModule} from '@angular/router';
 import {routes} from './login-routing';
-import {MatInputModule, MatButtonModule} from '@angular/material';
+import {MatInputModule, MatButtonModule, MatIconModule} from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
@@ -12,6 +12,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     CommonModule,
     MatInputModule,
     MatButtonModule,
+    MatIconModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
   ],
