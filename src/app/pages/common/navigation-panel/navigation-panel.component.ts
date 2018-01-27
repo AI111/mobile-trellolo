@@ -20,13 +20,11 @@ export class NavigationPanelComponent implements OnInit, OnDestroy {
     this.projects = projectService.getAll();
   }
   public onProjectChange(e: MatSelectChange): void{
-    console.log(e);
     this.projectService.setProject(e.value);
   }
   ngOnInit(): void {
     this.projectSubscription = this.projectService.project.subscribe((pr) => {
       this.project = pr;
-      console.log("PR",pr);
     });
   }
   ngOnDestroy(): void {

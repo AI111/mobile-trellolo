@@ -1,4 +1,4 @@
-import {ElementRef, Inject, Injectable} from '@angular/core';
+import { Inject, Injectable} from '@angular/core';
 import {APP_CONFIG} from '../../../common/IAppConfig';
 import {AuthService} from '../../../common/auth.service/auth.service';
 import {SocketService} from '../../../common/socket.service';
@@ -13,7 +13,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 import {CardService} from '../services/card.service';
-import {RoomUserEvents} from '../../chat/services/board-socket.service';
+import {eventTarget, eventType, IBoardChangeEvent} from '../../../common/models/IBoardChangeEvent';
 
 // export enum RoomEvents {
 //   ADD_MESSAGE = 'ADD_MESSAGE',
@@ -21,11 +21,11 @@ import {RoomUserEvents} from '../../chat/services/board-socket.service';
 //   USER_JOIN = 'JOIN_USER',
 //   USER_LEAVE = 'LEAVE_USER',
 // }
+
 export enum BoardUserEvents {
   JOIN_BOARD = 'join_board',
   LEAVE_ROOM = 'LEAVE_ROOM',
 }
-
 
 @Injectable()
 export class DndBoardService {
@@ -85,18 +85,36 @@ export class DndBoardService {
         })
         .flatMap((card) => this.cardService.update(card));
   }
-
   private async initSocketConnection(boardId) {
     this.socket = this.socketService.createConnection(this.config.boardNamespace);
     await this.joinRoom(boardId);
     this.socket.on('notify', (data) => {
       console.log(data);
+      this.handleCardChange(data);
+      this.handleColumnChange(data);
     });
+  }
+  handleCardChange(data: IBoardChangeEvent<ICardModel>) {
+    if (data.modelName !== eventTarget.CARD) { return; }
+    if (data.activityType === eventType.CREATE) {
+      const cards = this.data.columns.find((col) => col._id === data.toState.columnId).cards;
+      cards.splice(data.toState.position - 1, 0, data.toState);
+    } else if(data.modelName === eventType.UPDATE) {
+      const cards = this.data.columns.find((col) => col._id === data.toState.columnId).cards;
+      cards.splice(data.toState.position - 1, 0, data.toState);
+    }
+
+  }
+  handleColumnChange(data: IBoardChangeEvent<IColumnModel>) {
+    if (data.modelName !== eventTarget.COLUMN) { return; }
+    if (data.activityType === eventType.CREATE) {
+      this.data.columns.splice(data.toState.position - 1, 0, data.toState);
+    }
   }
   private joinRoom(boardId): Promise<string> {
     return new Promise((resolve: (socket: any) => any, reject: (socket: any) => any) => {
       this.socket.emit(BoardUserEvents.JOIN_BOARD, boardId, (status: number, mess: string) => {
-        if (status === 200) return resolve(mess);
+        if (status === 200) { return resolve(mess); }
         return reject(mess);
       });
     });

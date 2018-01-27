@@ -5,6 +5,8 @@ import {Subscription} from 'rxjs/Subscription';
 import {DragulaService} from 'ng2-dragula';
 import {Dragula, DragulaOptions, Drake} from 'dragula';
 import {DndBoardService} from '../dnd-board.service';
+import {ColumnService} from '../../services/column.service';
+import {IColumnModel} from '../../../../common/models/IColumModel';
 
 @Component({
   selector: 'app-combound-board',
@@ -16,7 +18,8 @@ export class ComboundBoardComponent implements OnInit, AfterViewInit{
 
   @Input()
   public data: IBoardModel;
-  constructor(private dndService: DndBoardService) {
+  constructor(private dndService: DndBoardService,
+              private columnCervice: ColumnService) {
   }
 
   ngOnInit() {
@@ -24,12 +27,16 @@ export class ComboundBoardComponent implements OnInit, AfterViewInit{
     this.dndService.initData(this.data);
     this.dndService.columnDrop
       .subscribe((col) => {
-        console.log(col);
       });
     this.dndService.cardDrop
       .subscribe((col) => {
-        console.log(col);
       });
+  }
+  createNewColumn(title: string): void {
+    this.columnCervice.create({
+      title,
+      boardId: this.data._id,
+    }).subscribe();
   }
   ngAfterViewInit(): void {
   }

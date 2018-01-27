@@ -1,0 +1,8 @@
+<span class="new-col">
+   <form class="form-fields" [formGroup]="cardForm" (ngSubmit)="onSubmit()" novalidate>
+      <input  type="text" formControlName="name" placeholder="Clearable input"/>
+     <button  mat-icon-button  class="clear-text" (click)="clearData()" type="button" aria-label="Clear">
+        <mat-icon>close</mat-icon>
+      </button>
+   </form>
+</span>

@@ -2,5 +2,6 @@
   <div class="board-list container" [dragula]='"board"' [dragulaModel]="data.columns">
     <app-board-cols  class="col-list" *ngFor="let col of data.columns" [column]="col" [attr.data-id]="col._id">
     </app-board-cols>
+    <app-new-col class="col-list" (columnCreate)="createNewColumn($event)"></app-new-col>
   </div>
 </div>

@@ -1,0 +1,30 @@
+.new-col{
+  position: relative;
+
+  .clear-text{
+    float: right;
+    margin-top: -44px;
+
+  }
+  .ng-pristine{
+    .clear-text{
+      display: none;
+    }
+  }
+  .form-fields{
+
+    height: 48px;
+    width: 100%;
+    input{
+      width: 100%;
+      padding: 0 4px;
+      box-sizing: border-box;
+      height: 48px;
+      &::placeholder{
+        font-family: Roboto,"Helvetica Neue",sans-serif;
+        font-size: 15px;
+        color: #ea4335;
+      }
+    }
+  }
+}

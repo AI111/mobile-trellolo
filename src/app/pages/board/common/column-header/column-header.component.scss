@@ -19,8 +19,9 @@
     flex: 0 0 48px;
   }
   .expansion-indicator{
+    width: 24px;
+    height: 24px;
     transition: margin 225ms cubic-bezier(.4,0,.2,1);
-    flex: 0 0 auto;
     background-color: transparent;
     border: none;
     &::after {

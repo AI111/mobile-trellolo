@@ -27,7 +27,6 @@ export class ProjectService extends IBaseCRUDServicr<IProjectModel> {
  }
  public setProject(project: IProjectModel){
    localStorage.setItem('project', project._id + '');
-   console.log(project);
    this._project.next(project);
  }
  public get project(): BehaviorSubject<IProjectModel>{

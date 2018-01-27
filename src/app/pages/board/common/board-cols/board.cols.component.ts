@@ -19,10 +19,9 @@ export class BoardColsComponent implements OnInit {
   public track(card: ICardModel) {
     return card._id;
   }
-  public createCard(description: string){
-    console.log(description);
+  public createCard(title: string){
     this.cardService.create({
-      description,
+      title,
       columnId: this.column._id,
       boardId: this.column.boardId
     } as ICardModel).subscribe();

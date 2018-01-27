@@ -4,6 +4,6 @@ import {IDBEntity} from './IDBEntity';
 export interface IColumnModel extends IDBEntity {
   boardId?: number;
   cards?: ICardModel[];
-  position: number;
+  position?: number;
   title: string;
 }

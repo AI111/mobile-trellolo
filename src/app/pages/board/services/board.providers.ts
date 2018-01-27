@@ -17,7 +17,7 @@ export const BOARDS_RESOLVE = new InjectionToken<AbstractDataResolverAll<IActivi
 export const CARD_RESOLVE = new InjectionToken<AbstractDataResolverById<IActivityModel>>('BOARD_RESOLVE');
 
 export function cardResolve(service: CardService) {
-  return new AbstractDataResolverById<ICardModel>(service, 'id');
+  return new AbstractDataResolverById<ICardModel>(service, 'cardId');
 }
 export const DATA_RESOLE_PROVIDERS: FactoryProvider[] = [
   {

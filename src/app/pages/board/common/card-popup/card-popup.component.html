@@ -1,5 +1,8 @@
 <div class="pop-over" >
   <!--<a  [routerLink]="[{ outlets: { popup: null } }]"></a>-->
-  <div class="shadow" (click)="closePopup()"></div>
-  <div class="content"></div>
+  <div class="shadow" (click)="closePopup($event)"></div>
+  <div class="content">
+    <app-card></app-card>
+    {{card | async | json}}
+  </div>
 </div>

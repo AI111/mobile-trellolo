@@ -23,10 +23,12 @@ import {MatListModule} from '@angular/material';
     BoardCommonModule,
     RouterModule.forChild(routes),
   ],
-  declarations: [BoardComponent,
+  declarations: [
+    BoardComponent,
     ActivityComponent,
     BoardsComponent,
-    TaskBoardComponent],
+    TaskBoardComponent
+  ],
   providers: [ActivityService,
     BoardService,
     ColumnService,

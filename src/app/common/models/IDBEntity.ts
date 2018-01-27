@@ -1,5 +1,5 @@
 export interface IDBEntity {
-  _id: number;
+  _id?: number;
   createdAt?: Date;
   updatedAt?: Date;
 }

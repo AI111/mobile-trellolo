@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CardUserListComponent } from './card-user-list.component';
+import { NewColComponent } from './new-col.component';
 
-describe('CardUserListComponent', () => {
-  let component: CardUserListComponent;
-  let fixture: ComponentFixture<CardUserListComponent>;
+describe('NewColComponent', () => {
+  let component: NewColComponent;
+  let fixture: ComponentFixture<NewColComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardUserListComponent ]
+      declarations: [ NewColComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CardUserListComponent);
+    fixture = TestBed.createComponent(NewColComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -29,7 +29,6 @@ export class ColumnHeaderComponent implements OnInit {
    }
   }
   public toggle(): void{
-    console.log(this.open);
     this.open = !this.open;
   }
   public clearData(): void {

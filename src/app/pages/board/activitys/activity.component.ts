@@ -15,10 +15,8 @@ export class ActivityComponent implements OnInit {
   ngOnInit() {
     this.activityService.getAll({project: 1})
       .subscribe((val) => {
-        console.log(val);
       })
   }
 setPage(ev){
-  console.log(ev);
 }
 }

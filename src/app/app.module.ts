@@ -22,7 +22,7 @@ import {AuthGuard} from './common/permissions.service';
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules
-    })
+    }),
   ],
   providers: [
     {provide: APP_CONFIG, useValue: config},

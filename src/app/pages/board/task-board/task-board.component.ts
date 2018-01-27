@@ -12,7 +12,7 @@ export class TaskBoardComponent implements OnInit {
   public board: Observable<IBoardModel>;
 
   constructor(private route: ActivatedRoute) {
-  this.board = this.route.data.map((data) => data.board);
+    this.board = this.route.data.map((data) => data.board);
   }
 
   ngOnInit() {
