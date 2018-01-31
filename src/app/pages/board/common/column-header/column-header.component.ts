@@ -35,8 +35,8 @@ export class ColumnHeaderComponent implements OnInit {
     this.cardForm.reset();
   }
   private createForm() {
-    this.cardForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]]
-    });
+      this.cardForm = this.fb.group({
+        name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]]
+      });
   }
 }

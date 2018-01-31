@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {APP_CONFIG} from '../common/IAppConfig';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 @Component({

@@ -2,7 +2,6 @@
   <!--<a  [routerLink]="[{ outlets: { popup: null } }]"></a>-->
   <div class="shadow" (click)="closePopup($event)"></div>
   <div class="content">
-    <app-card></app-card>
-    {{card | async | json}}
+    <app-card [card]="card | async"></app-card>
   </div>
 </div>

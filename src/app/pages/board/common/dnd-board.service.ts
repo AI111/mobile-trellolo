@@ -99,7 +99,7 @@ export class DndBoardService {
     if (data.activityType === eventType.CREATE) {
       const cards = this.data.columns.find((col) => col._id === data.toState.columnId).cards;
       cards.splice(data.toState.position - 1, 0, data.toState);
-    } else if(data.modelName === eventType.UPDATE) {
+    } else if (data.activityType === eventType.UPDATE) {
       const cards = this.data.columns.find((col) => col._id === data.toState.columnId).cards;
       cards.splice(data.toState.position - 1, 0, data.toState);
     }

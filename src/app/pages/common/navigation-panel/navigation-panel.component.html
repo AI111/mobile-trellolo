@@ -8,7 +8,7 @@
       <!--<mat-icon matListIcon>chat</mat-icon>-->
       <!--Chat</a>-->
 <!--</mat-list>-->
-<mat-form-field>
+<mat-form-field class="project-select" >
   <mat-select placeholder="Selected project" [(ngModel)]="project" (change)="onProjectChange($event)">
     <mat-option *ngFor="let project of projects | async" [value]="project">
       <img matListAvatar class="project-icon" [src]="project.icon" alt="">

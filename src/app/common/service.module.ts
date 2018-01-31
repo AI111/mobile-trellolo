@@ -6,14 +6,13 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ProjectService} from './project.service';
 import {AuthInterceptor} from './auth.service/auth.interceptor';
 import {SocketService} from './socket.service';
-import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule
   ],
-  declarations: [UserListComponent],
+  declarations: [],
   providers: [
     AuthService,
     ProjectService,
@@ -26,7 +25,6 @@ import { UserListComponent } from './user-list/user-list.component';
     },
   ],
   exports: [
-    UserListComponent
   ]
 })
 export class AuthModule { }
