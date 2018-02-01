@@ -3,7 +3,7 @@ import {BoardComponent} from './board.component';
 import {ActivityComponent} from './activitys/activity.component';
 import {TaskBoardComponent} from './task-board/task-board.component';
 import {BOARD_RESOLVE, BOARDS_RESOLVE, CARD_RESOLVE} from './services/board.providers';
-import {CardPopupComponent} from './common/card-popup/card-popup.component';
+import {CardPopupComponent} from './card/card-popup.component';
 
 export const routes: Routes = [
   {

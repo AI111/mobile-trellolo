@@ -1,0 +1,12 @@
+<div>
+  <form [formGroup]="cardForm" novalidate>
+    <input type="text" formControlName="title">
+    <div>
+      <app-md-editor formControlName="description"></app-md-editor>
+    </div>
+
+  </form>
+
+ <p>{{cardForm.value  | json}}</p>
+ <p>{{cardForm.status  | json}}</p>
+</div>

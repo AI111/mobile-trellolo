@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, ActivatedRouteSnapshot, Router} from '@angular/router';
-import {ICardModel} from '../../../../common/models/ICardModel';
+import {ICardModel} from '../../../common/models/ICardModel';
 import {Observable} from 'rxjs/Observable';
 
 @Component({

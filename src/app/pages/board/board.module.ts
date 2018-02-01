@@ -14,11 +14,13 @@ import {BoardCommonModule} from './common/board.common.module';
 import {ColumnService} from './services/column.service';
 import {CardService} from './services/card.service';
 import {MatListModule} from '@angular/material';
+import {CardModule} from './card/card.module';
 
 @NgModule({
   imports: [
     MatListModule,
     CommonModule,
+    CardModule,
     NgxDatatableModule,
     BoardCommonModule,
     RouterModule.forChild(routes),

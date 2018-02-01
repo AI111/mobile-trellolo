@@ -1,0 +1,17 @@
+
+.markdown-editor{
+
+  width: 100%;
+  height: 200px;
+  .edit-panel{
+    margin: 0;
+    height: 36px;
+    width: 100%;
+    background-color: #F0F0F0;
+  }
+  textarea{
+    margin: 0;
+    width: 100%;
+    height: calc(100% - 36px);
+  }
+}

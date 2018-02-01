@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
-import {ICardModel} from '../../../../common/models/ICardModel';
+import {ICardModel} from '../../../common/models/ICardModel';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -18,7 +18,8 @@ export class CardComponent implements OnInit, OnChanges {
   }
   private createForm(): void {
     this.cardForm = this.fb.group({
-      title: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]]
+      title: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
+      description: ['', Validators.required]
     });
   }
   ngOnInit() {

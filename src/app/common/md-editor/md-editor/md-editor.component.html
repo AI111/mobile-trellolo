@@ -1,4 +1,10 @@
-<div>
-<span></span>
-  <textarea name="" id="" cols="30" rows="10"></textarea>
+<div class="markdown-editor">
+<div class="edit-panel">
+  <button (click)="toggle()">edit</button>
+</div>
+  <textarea *ngIf="edit; else preview" [(ngModel)]="value"></textarea>
+
+  <ng-template #preview><div #dataContainer [innerHTML]="md" class="md-content">
+
+  </div></ng-template>
 </div>

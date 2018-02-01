@@ -8,9 +8,7 @@ import { ColumnHeaderComponent } from './column-header/column-header.component';
 import {MatButtonModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule} from '@angular/material';
 import {DndBoardService} from './dnd-board.service';
 import {ReactiveFormsModule} from '@angular/forms';
-import { CardPopupComponent } from './card-popup/card-popup.component';
 import {RouterModule} from '@angular/router';
-import {CardComponent} from './card/card.component';
 import { NewColComponent } from './new-col/new-col.component';
 
 @NgModule({
@@ -31,8 +29,6 @@ import { NewColComponent } from './new-col/new-col.component';
     BoardColsComponent,
     BoardCardComponent,
     ColumnHeaderComponent,
-    CardPopupComponent,
-    CardComponent,
     NewColComponent,
   ],
   providers: [
@@ -42,7 +38,6 @@ import { NewColComponent } from './new-col/new-col.component';
     ComboundBoardComponent,
     BoardColsComponent,
     BoardCardComponent,
-    CardComponent,
   ]
 })
 export class BoardCommonModule { }
