@@ -8,6 +8,7 @@ export interface IBoardModel extends IDBEntity {
   projectId?: number;
   description?: string;
   columns?: IColumnModel[];
+  users?: IUser[];
   info?: string;
   name: string;
 }

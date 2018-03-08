@@ -1,12 +1,25 @@
 <div>
   <form [formGroup]="cardForm" novalidate>
-    <input type="text" formControlName="title">
-    <div>
-      <app-md-editor formControlName="description"></app-md-editor>
-    </div>
+
+    <input class="title" type="text" formControlName="title">
+
+    <app-milti-select [data]="users | async"></app-milti-select>
+
+    <app-md-editor class="editor" formControlName="description"></app-md-editor>
 
   </form>
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link
+       [routerLink]="'comments'"
+       routerLinkActive>
+      COMMENTS
+    </a>
+    <a mat-tab-link
+       [routerLink]="'history'"
+       routerLinkActive>
+      HISTORY
+    </a>
+  </nav>
 
- <p>{{cardForm.value  | json}}</p>
- <p>{{cardForm.status  | json}}</p>
+  <router-outlet></router-outlet>
 </div>

@@ -18,8 +18,6 @@ export class MdEditorComponent implements OnInit, ControlValueAccessor {
   @Input('value')
   public _value: string;
   public md: string;
-  @ViewChild('dataContainer')
-  mdContainer: ElementRef;
 
   public edit = false;
 
@@ -30,7 +28,6 @@ export class MdEditorComponent implements OnInit, ControlValueAccessor {
   }
 
   set value(val) {
-    console.log(val);
     this._value = val;
     this.onChange(val);
     this.onTouched();
@@ -41,6 +38,8 @@ export class MdEditorComponent implements OnInit, ControlValueAccessor {
     if(!this.edit)this.compileMd();
   }
   writeValue(obj: any): void {
+    this.value = obj;
+    this.compileMd();
   }
 
   registerOnChange(fn: (text: string) => void): void {
@@ -51,7 +50,6 @@ export class MdEditorComponent implements OnInit, ControlValueAccessor {
     this.onTouched = fn;
   }
   private onChange = (text: string): void => {
-
   }
   onTouched = () => {
 
@@ -62,6 +60,6 @@ export class MdEditorComponent implements OnInit, ControlValueAccessor {
   private compileMd(){
     // console.log(this.mdContainer.nativeElement);
     // this.mdContainer.nativeElement.innerHTML = this.mdService.compileMd(this.value);
-    this.md = this.mdService.compileMd(this.value);
+    this.md = this.value && this.mdService.compileMd(this.value);
   }
 }

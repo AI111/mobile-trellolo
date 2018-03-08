@@ -1,0 +1,16 @@
+<button mat-button [matMenuTriggerFor]="menu">users</button>
+<mat-menu #menu="matMenu">
+  <div>
+    <h3>headre</h3>
+    <button ><mat-icon>close</mat-icon></button>
+  </div>
+  <div>
+    <input class="search" type="text"  (click)="$event.stopPropagation()">
+  </div>
+  <ul>
+    <li *ngFor="let item of data">
+      <div><input type="checkbox" (click)="check(item._id, $event)">{{item.name}}</div>
+    </li>
+  </ul>
+  <ng-content></ng-content>
+</mat-menu>

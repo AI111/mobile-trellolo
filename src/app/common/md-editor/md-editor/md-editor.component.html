@@ -1,10 +1,14 @@
 <div class="markdown-editor">
-<div class="edit-panel">
-  <button (click)="toggle()">edit</button>
-</div>
+  <div class="edit-panel">
+    <button mat-icon-button (click)="toggle()">
+      <mat-icon aria-label="Edit">edit</mat-icon>
+    </button>
+
+  </div>
   <textarea *ngIf="edit; else preview" [(ngModel)]="value"></textarea>
 
-  <ng-template #preview><div #dataContainer [innerHTML]="md" class="md-content">
-
-  </div></ng-template>
+  <ng-template #preview>
+    <div #dataContainer [innerHTML]="md" class="md-content markdown-body">
+    </div>
+  </ng-template>
 </div>

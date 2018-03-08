@@ -14,6 +14,10 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 import {CardService} from '../services/card.service';
 import {eventTarget, eventType, IBoardChangeEvent} from '../../../common/models/IBoardChangeEvent';
+import {Subject} from 'rxjs/Subject';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {ReplaySubject} from 'rxjs/ReplaySubject';
+import {IUser} from '../../../common/models/IUser';
 
 // export enum RoomEvents {
 //   ADD_MESSAGE = 'ADD_MESSAGE',
@@ -38,7 +42,7 @@ export class DndBoardService {
               private cardService: CardService,
               private socketService: SocketService) {
   }
-
+  public users: Subject<IUser[]> = new ReplaySubject();
   public boardData: Observable<IBoardModel>;
   public columnDrop: Observable<IColumnModel>;
   public cardDrop: Observable<ICardModel>;
@@ -58,6 +62,7 @@ export class DndBoardService {
   }
 
   public initData(data: IBoardModel) {
+    this.users.next(data.users);
     this.initSocketConnection(data._id);
     this.data = data;
     this.columnDrop = this.dragulaService.dropModel.asObservable()

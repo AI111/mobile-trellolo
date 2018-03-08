@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 // import {setOptions, Renderer} from 'marked';
 import * as md from 'marked';
 import {MarkedOptions} from 'marked';
-// import * as highlight from  'highlight.js';
-import * as prism from  'prismjs';
+import * as highlight from  'highlight.js';
 @Injectable()
 export class MarkdownService {
   private _renderer = new md.Renderer();
@@ -22,7 +21,8 @@ export class MarkdownService {
         smartLists: true,
         smartypants: false,
         render: this._renderer,
-        highlight: (code, lang) => prism.highlight(code, prism.languages[lang || 'markup']),
+        // highlight: (code, lang) => prism.highlight(code, prism.languages[lang || 'markup']),
+        highlight: (code, lang) => highlight.highlightAuto(code).value,
       } as MarkedOptions,
       options
     ));

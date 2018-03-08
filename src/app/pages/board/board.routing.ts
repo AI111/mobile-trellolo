@@ -4,6 +4,7 @@ import {ActivityComponent} from './activitys/activity.component';
 import {TaskBoardComponent} from './task-board/task-board.component';
 import {BOARD_RESOLVE, BOARDS_RESOLVE, CARD_RESOLVE} from './services/board.providers';
 import {CardPopupComponent} from './card/card-popup.component';
+import {routes as cardRoutes} from './card/card.routing';
 
 export const routes: Routes = [
   {
@@ -26,7 +27,8 @@ export const routes: Routes = [
         pathMatch: 'prefix',
         resolve: {
           card: CARD_RESOLVE
-        }
+        },
+        children: cardRoutes,
       },
     ]
   },

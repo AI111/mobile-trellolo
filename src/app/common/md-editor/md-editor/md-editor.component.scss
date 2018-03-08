@@ -1,17 +1,26 @@
 
 .markdown-editor{
 
-  width: 100%;
-  height: 200px;
+  width: inherit;
+  height: inherit;
   .edit-panel{
     margin: 0;
-    height: 36px;
+    height: 40px;
     width: 100%;
     background-color: #F0F0F0;
   }
-  textarea{
+  textarea,.md-content{
+    background-color: #FEFEFE;
+    overflow: auto;
     margin: 0;
     width: 100%;
     height: calc(100% - 36px);
+  }
+  textarea{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    resize: none;
+    outline: none;
   }
 }
